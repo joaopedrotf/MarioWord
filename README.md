@@ -5,7 +5,9 @@
  https://www.youtube.com/embed/r9buAwVBDhA
  
  Melhorado com a função de Pontuação, botão de reiniciar e melhorias de jogabilidade.<br>
- <img align="center" alt="Joao-HTML" height="300px"  src="https://user-images.githubusercontent.com/107484851/188705190-21c39621-f2e6-48b5-bf7c-5f0642e7987b.png">
+ <img align="center" alt="Joao-HTML" height="300px"  src="https://user-images.githubusercontent.com/107484851/188708384-b05245b4-ab1b-407c-99e1-1f624b6e54f0.png">
+
 
  
  Para testar o site rodando clique no link abaixo.
+ https://joaopedrotf.github.io/MarioWord/
