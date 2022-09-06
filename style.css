@@ -36,18 +36,20 @@
 }
 .score{
     display: block;
-    font-size: 30px;
+    font: 30px bolder;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.582);
     color: rgb(36, 223, 11);
     position: absolute;
-    left: 850px;
-    top: 150px;
+    left: 750px;
+    top: 170px;
 }
 #reiniciar{
     display: block;
-    height: 40px;
-    width: 130px;
-    margin: 5px 0px 5px;
-    background-color: rgb(54, 54, 252) ;
+    height: 50px;
+    width: 150px;
+    padding: 5px;
+    margin: 10px 0px 10px;
+    background-color: rgb(33, 33, 160) ;
     font-size: 25px;
     color: rgb(36, 223, 11) ;
     border: none;
@@ -55,6 +57,7 @@
 #reiniciar:hover{
     color: rgb(54, 54, 252) ;
     background-color: rgb(36, 223, 11) ;
+    box-shadow: 2px 2px 10px rgb(54, 54, 252) ;
 }
 
 @keyframes pipe-animation{
