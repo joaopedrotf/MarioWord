@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mário Word</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body onload="iniciar()">
+    <div class="game-board">
+        <img src="images/clouds1.png" alt="nuvem" class="nuvem">
+        <img src="images/pipe.png" alt="pipe" class="pipe ">
+        <img src="images/mario.gif" alt="mario" class="mario" > 
+        <div class="score">
+            <p id="score">SCORE: 0</p>
+            
+            <!-- função melhor pontuação COM ERRO :(
+                <p id="hi" class="hi">HI: 0</p>
+                <button id="reiniciar" class="reiniciar" onclick="reiniciar()">Reiniciar</button>
+            -->
+        </div>
+    </div>
+</body>
+<script>
+    
+    const mario = document.querySelector(`.mario`);
+    const  pipe= document.querySelector(`.pipe`)
+    var sec=0
+//função score
+function iniciar(){
+    watch()
+    intervalo=setInterval(watch,1000)
+
+}
+function watch(){
+    sec++
+    document.getElementById('score').innerHTML=`<p id="score">SCORE: ${sec}</p>`;
+}
+
+//função pular
+const jump = () => {
+mario.classList.add(`jump`);
+
+setTimeout(()=>{
+mario.classList.remove(`jump`);
+}, 600);
+}
+
+//função terminar jogo
+const loop = setInterval(()=>{
+
+
+const pipePosition = pipe.offsetLeft;
+const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', ' ');
+
+console.log(marioPosition);
+
+if(pipePosition<=120 && pipePosition>0 && marioPosition<80){
+
+pipe.style.animation = `none`;
+pipe.style.left =`${pipePosition}px`;
+   
+mario.style.animation = `none`;
+mario.style.bottom =`${marioPosition}px`;
+
+mario.src = `images/game-over.png`;
+mario.style.width=`;75px`;
+mario.style.marginLeft=`50px`;
+
+//função score e reiniciar
+    clearInterval(intervalo)
+    var secFinal=sec
+    document.getElementById('score').innerHTML=`<p id="score">SCORE: ${sec}</p>
+    <button id="reiniciar" class="reiniciar" onclick="window.location.reload()">REINICIAR</button>`;
+
+//função melhor pontuação COM ERRO :(
+    /*hi()
+    if(sec>secFinal){
+        var hi=secFinal
+        document.getElementById('hi').innerHTML=`<p id="hi">HI: ${hi}</p>`;
+    }else{
+        document.getElementById('hi').innerHTML=`<p id="hi">HI: ${secFinal}</p>`;
+    }*/
+
+
+clearInterval(loop);
+}
+}, 10);
+
+document.addEventListener(`keydown`, jump);
+</script>
+</html>
